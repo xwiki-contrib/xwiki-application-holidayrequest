@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Holiday Request</web>
+<name>Translation</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Holiday Request.HolidayRequestSheet</parent>
+<creator>xwiki:XWiki.Admin</creator>
+<author>xwiki:XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+<creationDate>1353946831000</creationDate>
+<date>1354196016000</date>
+<contentUpdateDate>1354196008000</contentUpdateDate>
+<version>1.1</version>
+<title>Translation</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TranslationDocumentClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<scope>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>scope</name>
+<number>1</number>
+<prettyName>Scope</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</scope>
+</class>
+<name>Holiday Request.Translation</name>
+<number>0</number>
+<className>XWiki.TranslationDocumentClass</className>
+<guid>08ded35e-8282-469b-abca-e70012173f63</guid>
+<property>
+<scope>WIKI</scope>
+</property>
+</object>
+<content>contrib.hr.title=Holiday Request Application
+
+contrib.hr.employee=Employee
+contrib.hr.startDate=Start Date
+contrib.hr.endDate=End Date
+contrib.hr.manager=Manager
+contrib.hr.status=Status
+contrib.hr.numberDays=Number of days
+
+contrib.hr.accept.submit=Accept this request
+contrib.hr.refuse.submit=Refuse this request
+contrib.hr.cancel.submit=Cancel this request
+contrib.hr.notify.submit=Save this request and send a notification to the manager
+
+contrib.hr.email.accept.success=This request has been accepted and an email has been sent to notify the employee of your decision.
+contrib.hr.email.accept.failure=This request has been accepted but we encountered an error while trying to send a notification email.
+contrib.hr.email.refuse.success=This request has been refused and an email has been sent to notify the employee of your decision.
+contrib.hr.email.refuse.failure=This request has been refused but we encountered an error while trying to send a notification email.
+contrib.hr.email.cancel.success=This request has been cancelled and an email has been sent to notify your manager of your decision.
+contrib.hr.email.cancel.failure=This request has been cancelled but we encountered an error while trying to send a notification email.
+contrib.hr.email.notify.success=An notification email has been sent to your manager. Click on "Save and view" to finish.
+contrib.hr.email.notify.failure=Your request has been saved, but unfortunately an error has been encountered while trying to send a notification to your manager. Click on "Save and view" to finish.
+
+contrib.hr.email.accept.title=Your holiday request from {0} to {1}
+contrib.hr.email.accept.text=Your holiday request from {0} to {1} has been accepted.
+contrib.hr.email.refuse.title=Your holiday request from {0} to {1}
+contrib.hr.email.refuse.text=Your holiday request from {0} to {1} has been refused.
+contrib.hr.email.notify.title={0} made a holiday request from {1} to {2}
+contrib.hr.email.notify.text={0} made a holiday request from {1} to {2} and set you as his manager. You can view and accept or refuse this request by clicking on the link below.
+contrib.hr.email.cancel.title={0} cancelled his holiday request from {1} to {2}.
+contrib.hr.email.cancel.text={0} cancelled his holiday request from {1} to {2}.
+
+contrib.hr.request={0} has made a Holiday Request from {1} to {2}
+
+contrib.hr.sheet.message=This class sheet must be applied on a document containing an "Holiday Request.HolidayRequestClass" object.
+
+contrib.hr.error.noModif=Only the manager and the employee can modify this request.
+
+contrib.hr.WebHome.employee=Employee
+contrib.hr.WebHome.startDate=Start Date
+contrib.hr.WebHome.endDate=End Date
+contrib.hr.WebHome.manager=Manager
+contrib.hr.WebHome.pending=Pending
+contrib.hr.WebHome.refused=Refused
+contrib.hr.WebHome.accepted=Accepted
+contrib.hr.WebHome.cancelled=Cancelled
+contrib.hr.WebHome.status=Status
+
+contrib.hr.status.accepted=Accepted
+contrib.hr.status.refused=Refused
+contrib.hr.status.pending=Pending
+contrib.hr.status.cancelled=Cancelled
+
+contrib.hr.notify.error.noManager=You should define a manager. Click on "Return to edit" to choose your manager. No notification mail has been send yet.
+contrib.hr.notify.error.orderDate=Your request ends before it starts! Please make sure you choose the right dates. You can modify them by clicking on "Return to edit". No notification mail has been send yet.
+
+contrib.hr.new.submit=Make a new Holiday Request
+
+contrib.hr.guest=To make a holiday request you need first to login or register. </content></xwikidoc>

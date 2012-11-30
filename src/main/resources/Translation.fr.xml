@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Holiday Request</web>
+<name>Translation</name>
+<language>fr</language>
+<defaultLanguage>en</defaultLanguage>
+<translation>1</translation>
+<parent></parent>
+<creator>xwiki:XWiki.Admin</creator>
+<author>xwiki:XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+<creationDate>1353946937000</creationDate>
+<date>1354195873000</date>
+<contentUpdateDate>1354195873000</contentUpdateDate>
+<version>1.1</version>
+<title>Translation</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment>Imported from XAR</comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>contrib.hr.title=Application de demande de congé
+
+contrib.hr.employee=Employé
+contrib.hr.startDate=Date de début
+contrib.hr.endDate=Date de fin
+contrib.hr.manager=Manager
+contrib.hr.status=Statut
+contrib.hr.numberDays=Nombre de jours
+
+contrib.hr.accept.submit=Accepter cette demande
+contrib.hr.refuse.submit=Refuser cette demande
+contrib.hr.cancel.submit=Annuler cette demande
+contrib.hr.notify.submit=Enregistrer cette demande et envoyer une notification au manager
+
+contrib.hr.email.accept.success=Un mail de notification a été envoyé
+contrib.hr.email.accept.failure=Echec lors de la tentative d'envoi du mail de notification
+
+contrib.hr.email.accept.success=Cette demande a été acceptée et un courriel a été envoyé à l'employé pour lui faire part de votre décision.
+contrib.hr.email.accept.failure=Cette demande a été acceptée, mais l'envoi d'un courriel à l'employé a échoué.  
+contrib.hr.email.refuse.success=Cette demande a été refusée et un courriel a été envoyé à l'employé pour lui faire part de votre décision.
+contrib.hr.email.refuse.failure=Cette demande a été refusée, mais l'envoi d'un courriel à l'employé a échoué. 
+contrib.hr.email.cancel.success=Cette demande a été annulée et un courriel a été envoyé à votre manager pour lui notifier cette annulation.
+contrib.hr.email.cancel.failure=Cette demande a été annulée, mais l'envoi d'un courriel à votre manager a échoué. 
+contrib.hr.email.notify.success=Un courriel a été envoyé à votre manager pour lui faire part de votre demande. Cliquez sur "Sauver et visualiser" pour terminer.
+contrib.hr.email.notify.failure=Votre demande a été enregistrée mais l'envoi d'un courriel à votre manager a échoué. Cliquez sur "Sauver et visualiser" pour terminer.
+
+contrib.hr.email.accept.title=Votre demande de congé du {0} au {1}
+contrib.hr.email.accept.text=Votre demande de congé du {0} au {1} a été acceptée.
+contrib.hr.email.refuse.title=Votre demande de congé du {0} au {1}
+contrib.hr.email.refuse.text=Votre demande de congé du {0} au {1} a été refusée.
+contrib.hr.email.notify.title={0} a fait une demande de congé du {1} au {2}
+contrib.hr.email.notify.text={0} a fait une demande de congé du {1} au {2} et vous a défini comme étant son manager. Vous pouvez consulter et accepter ou refuser cette demande en cliquant sur le lien ci-dessous.
+contrib.hr.email.cancel.title={0} a annulé sa demande de congé du {1} au {2}.
+contrib.hr.email.cancel.text={0} a annulé sa demande de congé {1} au {2}. 
+
+contrib.hr.request={0} a fait une demande de congé du {1} au {2}
+
+contrib.hr.sheet.message=Cette feuille de classe doit être appliquée à un document contenant un objet de type "Holiday Request.HolidayRequestClass".
+
+contrib.hr.error.noModif=Seuls le manager et l'employé peuvent modifier cette demande.
+
+contrib.hr.WebHome.employee=Employé
+contrib.hr.WebHome.startDate=Date de début
+contrib.hr.WebHome.endDate=Date de fin
+contrib.hr.WebHome.manager=Manager
+contrib.hr.WebHome.pending=En attente
+contrib.hr.WebHome.refused=Refusé
+contrib.hr.WebHome.accepted=Accepté
+contrib.hr.WebHome.cancelled=Annulé
+contrib.hr.WebHome.status=Statut
+
+
+contrib.hr.notify.error.noManager=Vous devez définir un manager. Cliquez sur "Retour à l'édition" pour choisir votre manager. Aucun mail de notification n'a été envoyé.
+contrib.hr.notify.error.orderDate=Votre congé prend fin avant de comencer! Vérifiez les dates que vous avez rentré. Vous pouvez les modifier en cliquant sur "Retour à l'édition". Aucun mail de notification n'a été envoyé.
+
+contrib.hr.new.submit=Faire une nouvelle demande de congé
+
+contrib.hr.guest=Pour faire une demande de congé, vous devez d'abord vous identifier ou vous enregistrer. </content></xwikidoc>

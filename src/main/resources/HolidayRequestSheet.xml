@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Holiday Request</web>
+<name>HolidayRequestSheet</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>Holiday Request.HolidayRequestClass</parent>
+<creator>xwiki:XWiki.Admin</creator>
+<author>xwiki:XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+<creationDate>1353943809000</creationDate>
+<date>1354267355000</date>
+<contentUpdateDate>1354267355000</contentUpdateDate>
+<version>1.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>true</hidden>
+<object>
+<class>
+<name>XWiki.XWikiRights</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<allow>
+<defaultValue>1</defaultValue>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>allow</displayType>
+<name>allow</name>
+<number>4</number>
+<prettyName>Allow/Deny</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</allow>
+<groups>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>groups</name>
+<number>1</number>
+<picker>1</picker>
+<prettyName>Groups</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+</groups>
+<levels>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<name>levels</name>
+<number>2</number>
+<prettyName>Levels</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>3</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+</levels>
+<users>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>users</name>
+<number>3</number>
+<picker>1</picker>
+<prettyName>Users</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+</users>
+</class>
+<name>Holiday Request.HolidayRequestSheet</name>
+<number>0</number>
+<className>XWiki.XWikiRights</className>
+<guid>facbacaf-519b-4acc-95cc-8f7aa6ca327a</guid>
+<property>
+<allow>1</allow>
+</property>
+<property>
+<groups>XWiki.HolidayRequestAdminGroup</groups>
+</property>
+<property>
+<levels>view,edit,comment,delete</levels>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.XWikiRights</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<allow>
+<defaultValue>1</defaultValue>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>allow</displayType>
+<name>allow</name>
+<number>4</number>
+<prettyName>Allow/Deny</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</allow>
+<groups>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>groups</name>
+<number>1</number>
+<picker>1</picker>
+<prettyName>Groups</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+</groups>
+<levels>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<name>levels</name>
+<number>2</number>
+<prettyName>Levels</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>3</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+</levels>
+<users>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>users</name>
+<number>3</number>
+<picker>1</picker>
+<prettyName>Users</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+</users>
+</class>
+<name>Holiday Request.HolidayRequestSheet</name>
+<number>1</number>
+<className>XWiki.XWikiRights</className>
+<guid>b572d9d8-8b78-4646-b458-ba6103929007</guid>
+<property>
+<allow>1</allow>
+</property>
+<property>
+<groups>XWiki.XWikiAllGroup</groups>
+</property>
+<property>
+<levels>view</levels>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.XWikiRights</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<allow>
+<defaultValue>1</defaultValue>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>allow</displayType>
+<name>allow</name>
+<number>4</number>
+<prettyName>Allow/Deny</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</allow>
+<groups>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>groups</name>
+<number>1</number>
+<picker>1</picker>
+<prettyName>Groups</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+</groups>
+<levels>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<name>levels</name>
+<number>2</number>
+<prettyName>Levels</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>3</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+</levels>
+<users>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>users</name>
+<number>3</number>
+<picker>1</picker>
+<prettyName>Users</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+</users>
+</class>
+<name>Holiday Request.HolidayRequestSheet</name>
+<number>2</number>
+<className>XWiki.XWikiRights</className>
+<guid>f84f4950-cb42-4203-9f64-c735c37b71c4</guid>
+<property>
+<allow>1</allow>
+</property>
+<property>
+<groups>XWiki.XWikiAdminGroup</groups>
+</property>
+<property>
+<levels>view</levels>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.XWikiRights</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<allow>
+<defaultValue>1</defaultValue>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>allow</displayType>
+<name>allow</name>
+<number>4</number>
+<prettyName>Allow/Deny</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</allow>
+<groups>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>groups</name>
+<number>1</number>
+<picker>1</picker>
+<prettyName>Groups</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+</groups>
+<levels>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<name>levels</name>
+<number>2</number>
+<prettyName>Levels</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>3</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+</levels>
+<users>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>input</displayType>
+<multiSelect>1</multiSelect>
+<name>users</name>
+<number>3</number>
+<picker>1</picker>
+<prettyName>Users</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<size>5</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+</users>
+</class>
+<name>Holiday Request.HolidayRequestSheet</name>
+<number>3</number>
+<className>XWiki.XWikiRights</className>
+<guid>5e346352-bde3-4731-b40a-4a4b0eaf579d</guid>
+<property>
+<allow>1</allow>
+</property>
+<property>
+<levels>view</levels>
+</property>
+<property>
+<users>XWiki.XWikiGuest</users>
+</property>
+</object>
+<content>{{velocity}}
+$xwiki.ssx.use("Holiday Request.SkinExtension")
+#set($employee = $!doc.getValue('employee'))
+#set($manager = $!doc.getValue('manager'))
+#set($user = $xwiki.getDocument($context.user))
+#set($fullUser = "xwiki:$user")
+#set($mail = $xwiki.getUserName($user, '$email', false))
+#set($employeeMail = $xwiki.getUserName($employee, '$email', false))
+#set($employeeShortName = $xwiki.getUserName($employee, '$first_name $last_name', false))
+#set($employeeName = $xwiki.getUserName($employee, "$first_name $last_name", true))
+#set($managerMail = $xwiki.getUserName($manager, '$email', false))
+#set($isHRAdmin = $xwiki.getUser().isUserInGroup("XWiki.HolidayRequestAdminGroup") || $user==$manager || $fullUser==$manager)
+#set($docRef = $doc.getDocumentReference())
+##set($localetest = $docRef.getLocale())
+#set($locale = $datetool.getLocale())
+#set($hasRightModify = $isHRAdmin || ($user==$employee &amp;&amp; $doc.getValue('status')=='value3'))
+#set($startDate = $datetool.format('full_date',$!doc.getValue("startDate"),$locale))
+#set($endDate = $datetool.format('full_date',$!doc.getValue("endDate"),$locale))
+#set($lang = $doc.getRealLanguage())
+#set($hr = $doc.getObject("Holiday Request.HolidayRequestClass"))
+#set($link = $doc.getExternalURL())
+#if($request.createHR=="true")
+  #set($newDoc=true)
+  $doc.set('employee', $context.user)  ##It's the current user who is making a Holiday Request
+  $doc.set('status', 'value3')  ##The status is "Pending"
+  $doc.save()
+#else
+  #set($newDoc=false)
+#end
+#if ($request.notify == 'true') 
+  #if($doc.getValue('manager')=="")  ##Si pas de manager défini
+    **$msg.get('contrib.hr.notify.error.noManager')**
+    #set($newDoc=true)
+  #else
+    #if($doc.getValue('startDate').compareTo($doc.getValue('endDate'))==1)  ##If endDate is before startDate
+      **$msg.get('contrib.hr.notify.error.orderDate')**
+      #set($newDoc=true)
+    #else
+      #if($employeeShortName != "")
+        #set($title = $msg.get('contrib.hr.email.notify.title', [$employeeShortName,$startDate,$endDate]))
+      #else
+        #set($title = $msg.get('contrib.hr.email.notify.title', [$employee,$startDate,$endDate]))
+      #end
+      #set($message = $msg.get('contrib.hr.email.notify.text', [$employeeShortName,$startDate,$endDate]))
+      #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)  ##Send a copy to employee?
+        $msg.get('contrib.hr.email.notify.success')
+      #else
+        $msg.get('contrib.hr.email.notify.failure')
+      #end
+    #end
+  #end
+#end
+#if ($request.accept == 'true')
+  $doc.set('status', 'value1')
+  $doc.save()
+  #set($title = $msg.get('contrib.hr.email.accept.title', [$startDate,$endDate]))
+  #set($message = $msg.get('contrib.hr.email.accept.text', [$startDate,$endDate]))
+  #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)
+    $msg.get('contrib.hr.email.accept.success')
+  #else
+    $msg.get('contrib.hr.email.accept.failure')
+  #end
+#end
+#if ($request.refuse == 'true')
+  $doc.set('status', 'value4')
+  $doc.save()
+  #set($title = $msg.get('contrib.hr.email.refuse.title', [$startDate,$endDate]))
+  #set($message = $msg.get('contrib.hr.email.refuse.text', [$startDate,$endDate]))
+  #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)
+    $msg.get('contrib.hr.email.refuse.success')
+  #else
+    $msg.get('contrib.hr.email.refuse.failure')
+  #end
+#end
+#if ($request.cancel == 'true')
+  $doc.set('status', 'value2')
+  $doc.save()
+  #if($employeeShortName != "")
+    #set($title = $msg.get('contrib.hr.email.cancel.title', [$employeeShortName,$startDate,$endDate]))
+  #else
+    #set($title = $msg.get('contrib.hr.email.cancel.title', [$employee,$startDate,$endDate]))
+  #end
+  #set($title = $msg.get('contrib.hr.email.cancel.title', [$employeeShortName,$startDate,$endDate]))
+  #set($message = $msg.get('contrib.hr.email.cancel.text', [$employeeShortName,$startDate,$endDate]))
+  #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)  ##Send a copy to employee?
+    $msg.get('contrib.hr.email.cancel.success')
+  #else
+    $msg.get('contrib.hr.email.cancel.failure')
+  #end
+#end
+
+{{html wiki="true"}}
+$xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator')
+#set($discard = $doc.use('Holiday Request.HolidayRequestClass'))
+## We don't have access to the form element to set the CSS class for the vertical form layout standard.
+
+#if($hr)
+#if($context.action == "view")
+  #if($xwiki.getUserName($employee, '$first_name$last_name', false)!="")
+    #set($employeeDisplay = $employeeName)
+  #else
+    #set($employeeDisplay = $doc.display('employee'))
+  #end
+  $msg.get('contrib.hr.request', [$employeeDisplay, $startDate, $endDate])  
+  ; &lt;label for="Holiday Request.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays') :&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('numberDays')
+  ; &lt;label for="Holiday Request.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager') :&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('manager')
+  ; &lt;label for="Holiday Request.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status') :&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display("status")
+
+#else   ##Edit mode
+  #if(!$hasRightModify &amp;&amp; !$newDoc)
+    $msg.get('contrib.hr.error.noModif') 
+  #else
+  (% class="xform" %)
+  (((
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_employee"&gt;$msg.get('contrib.hr.employee')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $!doc.display('employee','view')
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_startDate"&gt;$msg.get('contrib.hr.startDate')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $doc.display('startDate')
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_endDate"&gt;$msg.get('contrib.hr.endDate')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $doc.display('endDate')
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $doc.display('numberDays')
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $doc.display('manager')
+    ; &lt;label for="Holiday Request.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status')&lt;/label&gt;##
+      (% class="xHint" %)$msg.get('')
+    : $doc.display('status', 'view')
+  )))
+  #end
+#end
+
+&lt;div id="actions"&gt;
+#if($newDoc)
+  &lt;form action="" id="sendNotification"&gt;
+    &lt;span class="buttonwrapper"&gt;
+      &lt;input type="hidden" name="notify" value="true" /&gt;
+      &lt;input class="button" type="submit" value="$msg.get('contrib.hr.notify.submit')" /&gt;
+    &lt;/span&gt;
+  &lt;/form&gt;
+#else  ##No button display for new documents
+  #set($actualStatus = $doc.getValue('status'))
+  #if($isHRAdmin &amp;&amp; $actualStatus != 'value2')  ##If admin rights and status!=cancelled
+    &lt;form action="" id="statusAccepted"&gt;
+      &lt;span class="buttonwrapper"&gt;
+        &lt;input type="hidden" name="accept" value="true" /&gt;
+        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.accept.submit')" /&gt;
+      &lt;/span&gt;
+    &lt;/form&gt;
+    &lt;form action="" id="statusRefused"&gt;
+      &lt;span class="buttonwrapper"&gt;
+        &lt;input type="hidden" name="refuse" value="true" /&gt;
+        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.refuse.submit')" /&gt;
+      &lt;/span&gt;
+    &lt;/form&gt;
+  #end
+
+  #if($user == $employee &amp;&amp; $doc.getValue('status') == 'value3')
+    &lt;form action="" id="statusCancelled"&gt;
+      &lt;span class="buttonwrapper"&gt;
+        &lt;input type="hidden" name="cancel" value="true" /&gt;
+        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.cancel.submit')" /&gt;
+      &lt;/span&gt;
+    &lt;/form&gt;
+  #end
+  &lt;/div&gt;
+#end
+
+#else
+  $msg.get('contrib.hr.sheet.message')
+#end
+
+{{/html}}
+
+{{/velocity}}</content></xwikidoc>
