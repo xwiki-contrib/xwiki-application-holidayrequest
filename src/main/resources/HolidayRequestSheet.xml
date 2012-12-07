@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xwikidoc>
-  <web>Holiday Request</web>
+  <web>HolidayRequest</web>
   <name>HolidayRequestSheet</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <parent>Holiday Request.HolidayRequestClass</parent>
+  <parent>HolidayRequest.HolidayRequestClass</parent>
   <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1353943809000</creationDate>
-  <date>1354267355000</date>
-  <contentUpdateDate>1354267355000</contentUpdateDate>
+  <creationDate>1354791388000</creationDate>
+  <date>1354893003000</date>
+  <contentUpdateDate>1354892946000</contentUpdateDate>
   <version>1.1</version>
-  <title/>
+  <title>$msg.get('contrib.hr.requestPage.title')</title>
   <template/>
   <defaultTemplate/>
   <validationScript/>
@@ -89,10 +89,10 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Holiday Request.HolidayRequestSheet</name>
+    <name>HolidayRequest.HolidayRequestSheet</name>
     <number>0</number>
     <className>XWiki.XWikiRights</className>
-    <guid>facbacaf-519b-4acc-95cc-8f7aa6ca327a</guid>
+    <guid>75261aa3-2a2d-487e-9d57-b3c925c08586</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -169,10 +169,10 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Holiday Request.HolidayRequestSheet</name>
+    <name>HolidayRequest.HolidayRequestSheet</name>
     <number>1</number>
     <className>XWiki.XWikiRights</className>
-    <guid>b572d9d8-8b78-4646-b458-ba6103929007</guid>
+    <guid>80e5e521-40cb-4773-8dfe-c0030fb8fc5d</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -249,10 +249,10 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Holiday Request.HolidayRequestSheet</name>
+    <name>HolidayRequest.HolidayRequestSheet</name>
     <number>2</number>
     <className>XWiki.XWikiRights</className>
-    <guid>f84f4950-cb42-4203-9f64-c735c37b71c4</guid>
+    <guid>ebeb80e9-d142-468c-a073-7a7ce99a1ede</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -329,10 +329,10 @@
         <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
       </users>
     </class>
-    <name>Holiday Request.HolidayRequestSheet</name>
+    <name>HolidayRequest.HolidayRequestSheet</name>
     <number>3</number>
     <className>XWiki.XWikiRights</className>
-    <guid>5e346352-bde3-4731-b40a-4a4b0eaf579d</guid>
+    <guid>0bb76d2d-9532-4942-b27e-ce7518feabff</guid>
     <property>
       <allow>1</allow>
     </property>
@@ -344,7 +344,7 @@
     </property>
   </object>
   <content>{{velocity}}
-$xwiki.ssx.use("Holiday Request.SkinExtension")
+$xwiki.ssx.use("HolidayRequest.SkinExtension")
 #set($employee = $!doc.getValue('employee'))
 #set($manager = $!doc.getValue('manager'))
 #set($user = $xwiki.getDocument($context.user))
@@ -355,30 +355,44 @@ $xwiki.ssx.use("Holiday Request.SkinExtension")
 #set($employeeName = $xwiki.getUserName($employee, "$first_name $last_name", true))
 #set($managerMail = $xwiki.getUserName($manager, '$email', false))
 #set($isHRAdmin = $xwiki.getUser().isUserInGroup("XWiki.HolidayRequestAdminGroup") || $user==$manager || $fullUser==$manager)
-#set($docRef = $doc.getDocumentReference())
-##set($localetest = $docRef.getLocale())
 #set($locale = $datetool.getLocale())
 #set($hasRightModify = $isHRAdmin || ($user==$employee &amp;&amp; $doc.getValue('status')=='value3'))
 #set($startDate = $datetool.format('full_date',$!doc.getValue("startDate"),$locale))
 #set($endDate = $datetool.format('full_date',$!doc.getValue("endDate"),$locale))
-#set($lang = $doc.getRealLanguage())
-#set($hr = $doc.getObject("Holiday Request.HolidayRequestClass"))
+#set($hr = $doc.getObject("HolidayRequest.HolidayRequestClass"))
 #set($link = $doc.getExternalURL())
+#set($token = $services.csrf.getToken())
+
 #if($request.createHR=="true")
-  #set($newDoc=true)
   $doc.set('employee', $context.user)  ##It's the current user who is making a Holiday Request
+  #set($office = $!xwiki.getUserName($user, '$office', false))
+  #if($office!='$office')
+    $doc.set('office', $office)
+  #else
+    $doc.set('office', '-')
+  #end
   $doc.set('status', 'value3')  ##The status is "Pending"
   $doc.save()
+  $response.sendRedirect($doc.getURL('view', 'newDoc=true'))
+#end
+#if($request.cancel)
+  $doc.delete()
+  $response.sendRedirect($xwiki.getURL('HolidayRequest.WebHome'))
+#end
+#if($request.newDoc=='true')
+  #set($newDoc=true)
 #else
   #set($newDoc=false)
 #end
 #if ($request.notify == 'true') 
+  ##$doc.set('numberDays', $request.numberDays)
+  ##$doc.save()
   #if($doc.getValue('manager')=="")  ##Si pas de manager défini
-    **$msg.get('contrib.hr.notify.error.noManager')**
+    {{warning}}$msg.get('contrib.hr.notify.error.noManager'){{/warning}}
     #set($newDoc=true)
   #else
     #if($doc.getValue('startDate').compareTo($doc.getValue('endDate'))==1)  ##If endDate is before startDate
-      **$msg.get('contrib.hr.notify.error.orderDate')**
+      {{warning}}$msg.get('contrib.hr.notify.error.orderDate'){{/warning}}
       #set($newDoc=true)
     #else
       #if($employeeShortName != "")
@@ -390,12 +404,12 @@ $xwiki.ssx.use("Holiday Request.SkinExtension")
       #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)  ##Send a copy to employee?
         $msg.get('contrib.hr.email.notify.success')
       #else
-        $msg.get('contrib.hr.email.notify.failure')
+        {{warning}}$msg.get('contrib.hr.email.notify.failure'){{/warning}}
       #end
     #end
   #end
 #end
-#if ($request.accept == 'true')
+#if ($request.accept &amp;&amp; $isHRAdmin)
   $doc.set('status', 'value1')
   $doc.save()
   #set($title = $msg.get('contrib.hr.email.accept.title', [$startDate,$endDate]))
@@ -403,10 +417,10 @@ $xwiki.ssx.use("Holiday Request.SkinExtension")
   #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)
     $msg.get('contrib.hr.email.accept.success')
   #else
-    $msg.get('contrib.hr.email.accept.failure')
+    {{warning}}$msg.get('contrib.hr.email.accept.failure'){{/warning}}
   #end
 #end
-#if ($request.refuse == 'true')
+#if ($request.refuse &amp;&amp; $isHRAdmin)
   $doc.set('status', 'value4')
   $doc.save()
   #set($title = $msg.get('contrib.hr.email.refuse.title', [$startDate,$endDate]))
@@ -414,10 +428,10 @@ $xwiki.ssx.use("Holiday Request.SkinExtension")
   #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)
     $msg.get('contrib.hr.email.refuse.success')
   #else
-    $msg.get('contrib.hr.email.refuse.failure')
+    {{warning}}$msg.get('contrib.hr.email.refuse.failure'){{/warning}}
   #end
 #end
-#if ($request.cancel == 'true')
+#if ($request.cancel == 'true' &amp;&amp; $user==$employee)
   $doc.set('status', 'value2')
   $doc.save()
   #if($employeeShortName != "")
@@ -430,95 +444,142 @@ $xwiki.ssx.use("Holiday Request.SkinExtension")
   #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;a href=$link&gt;$link&lt;/a&gt;", "", "")==0)  ##Send a copy to employee?
     $msg.get('contrib.hr.email.cancel.success')
   #else
-    $msg.get('contrib.hr.email.cancel.failure')
+    {{warning}}$msg.get('contrib.hr.email.cancel.failure'){{/warning}}
   #end
+#end
+#if($!{request.exportPDF}=='true')
+  $response.sendRedirect($doc.getURL('export', 'format=pdf&amp;pdftemplate=Holiday+Request.PDFTemplate&amp;pdfcover=0&amp;pdftoc=0'))
 #end
 
 {{html wiki="true"}}
 $xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator')
-#set($discard = $doc.use('Holiday Request.HolidayRequestClass'))
+#set($discard = $doc.use('HolidayRequest.HolidayRequestClass'))
 ## We don't have access to the form element to set the CSS class for the vertical form layout standard.
 
 #if($hr)
-#if($context.action == "view")
+$doc.setTitle($msg.get('contrib.hr.requestPage.title'))
+#if($context.action == "view" &amp;&amp; !$newDoc)
   #if($xwiki.getUserName($employee, '$first_name$last_name', false)!="")
     #set($employeeDisplay = $employeeName)
   #else
     #set($employeeDisplay = $doc.display('employee'))
   #end
   $msg.get('contrib.hr.request', [$employeeDisplay, $startDate, $endDate])  
-  ; &lt;label for="Holiday Request.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays') :&lt;/label&gt;##
+  ; &lt;label for="HolidayRequest.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays') :&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('numberDays')
-  ; &lt;label for="Holiday Request.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager') :&lt;/label&gt;##
+  ; &lt;label for="HolidayRequest.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager') :&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('manager')
-  ; &lt;label for="Holiday Request.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status') :&lt;/label&gt;##
+  ; &lt;label for="HolidayRequest.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status') :&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display("status")
 
+
+    #set($actualStatus = $doc.getValue('status'))
+    #if($isHRAdmin &amp;&amp; $actualStatus == 'value3')  ##If admin rights and status=Pending
+    &lt;div id="actions"&gt;
+      &lt;form action="" id="statusAccepted"&gt;
+        &lt;div&gt;
+          &lt;span class="buttonwrapper"&gt;
+            ##&lt;input type="hidden" name="accept" value="true" /&gt;
+            &lt;input class="button" type="submit" name="accept" value="$msg.get('contrib.hr.accept.submit')" /&gt;
+          &lt;/span&gt;
+        
+          &lt;span class="buttonwrapper"&gt;
+            ##&lt;input type="hidden" name="refuse" value="true" /&gt;
+            &lt;input class="button" type="submit" name="refuse" value="$msg.get('contrib.hr.refuse.submit')" /&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;div&gt;
+    #end
+
+    #if($user == $employee &amp;&amp; $doc.getValue('status') == 'value3')
+    &lt;div id="actions"&gt;
+      &lt;form action="" id="statusCancelled"&gt;
+        &lt;div&gt;
+          &lt;span class="buttonwrapper"&gt;
+            &lt;input type="hidden" name="cancel" value="true" /&gt;
+            &lt;input class="button" type="submit" value="$msg.get('contrib.hr.cancel.submit')" /&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+    #end
+
+#elseif($context.action=="view" &amp;&amp; $newDoc)
+    &lt;form action="" method="post" id="sendNotification" class='xform'"&gt;
+      &lt;div&gt;  
+        &lt;input type="hidden" name="form_token" value=$token&gt;
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_employee"&gt;$msg.get('contrib.hr.employee')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $!doc.display('employee')
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_startDate"&gt;$msg.get('contrib.hr.startDate')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $doc.display('startDate', 'edit')
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_endDate"&gt;$msg.get('contrib.hr.endDate')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $doc.display('endDate', 'edit')
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $doc.display('numberDays', 'edit')
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $doc.display('manager', 'edit')
+        ; &lt;label for="HolidayRequest.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status')&lt;/label&gt;##
+          (% class="xHint" %)$msg.get('')
+        : $doc.display('status')
+        &lt;input type="hidden" name="notify" value="true" /&gt;
+        &lt;div id="actions"&gt;
+          &lt;span class="buttonwrapper"&gt;
+            &lt;input class="button" type="submit" value="$msg.get('contrib.hr.notify.submit')" name="action_save"&gt;
+          &lt;/span&gt;
+          &lt;span class="buttonwrapper"&gt;
+            &lt;input class="button" type="submit" value="$msg.get('contrib.hr.notify.cancel')" name="cancel"&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+#elseif($context.action == "export")
+   #if($xwiki.getUserName($employee, '$first_name$last_name', false)!="")
+    #set($employeeDisplay = $employeeShortName)
+  #else
+    #set($employeeDisplay = $doc.display('employee'))
+  #end
+  $msg.get('contrib.hr.pdf.request', [$employeeDisplay, $startDate, $endDate])
+ 
 #else   ##Edit mode
   #if(!$hasRightModify &amp;&amp; !$newDoc)
     $msg.get('contrib.hr.error.noModif') 
   #else
   (% class="xform" %)
   (((
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_employee"&gt;$msg.get('contrib.hr.employee')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_employee"&gt;$msg.get('contrib.hr.employee')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
     : $!doc.display('employee','view')
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_startDate"&gt;$msg.get('contrib.hr.startDate')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_startDate"&gt;$msg.get('contrib.hr.startDate')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
     : $doc.display('startDate')
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_endDate"&gt;$msg.get('contrib.hr.endDate')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_endDate"&gt;$msg.get('contrib.hr.endDate')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
     : $doc.display('endDate')
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_numberDays"&gt;$msg.get('contrib.hr.numberDays')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
     : $doc.display('numberDays')
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_manager"&gt;$msg.get('contrib.hr.manager')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
     : $doc.display('manager')
-    ; &lt;label for="Holiday Request.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status')&lt;/label&gt;##
+    ; &lt;label for="HolidayRequest.HolidayRequestClass_0_status"&gt;$msg.get('contrib.hr.status')&lt;/label&gt;##
       (% class="xHint" %)$msg.get('')
-    : $doc.display('status', 'view')
+    #if($isHRAdmin)
+      : $doc.display('status')
+    #else
+      : $doc.display('status', 'view')
+    #end
   )))
   #end
-#end
-
-&lt;div id="actions"&gt;
-#if($newDoc)
-  &lt;form action="" id="sendNotification"&gt;
-    &lt;span class="buttonwrapper"&gt;
-      &lt;input type="hidden" name="notify" value="true" /&gt;
-      &lt;input class="button" type="submit" value="$msg.get('contrib.hr.notify.submit')" /&gt;
-    &lt;/span&gt;
-  &lt;/form&gt;
-#else  ##No button display for new documents
-  #set($actualStatus = $doc.getValue('status'))
-  #if($isHRAdmin &amp;&amp; $actualStatus != 'value2')  ##If admin rights and status!=cancelled
-    &lt;form action="" id="statusAccepted"&gt;
-      &lt;span class="buttonwrapper"&gt;
-        &lt;input type="hidden" name="accept" value="true" /&gt;
-        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.accept.submit')" /&gt;
-      &lt;/span&gt;
-    &lt;/form&gt;
-    &lt;form action="" id="statusRefused"&gt;
-      &lt;span class="buttonwrapper"&gt;
-        &lt;input type="hidden" name="refuse" value="true" /&gt;
-        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.refuse.submit')" /&gt;
-      &lt;/span&gt;
-    &lt;/form&gt;
-  #end
-
-  #if($user == $employee &amp;&amp; $doc.getValue('status') == 'value3')
-    &lt;form action="" id="statusCancelled"&gt;
-      &lt;span class="buttonwrapper"&gt;
-        &lt;input type="hidden" name="cancel" value="true" /&gt;
-        &lt;input class="button" type="submit" value="$msg.get('contrib.hr.cancel.submit')" /&gt;
-      &lt;/span&gt;
-    &lt;/form&gt;
-  #end
-  &lt;/div&gt;
 #end
 
 #else

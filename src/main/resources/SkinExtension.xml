@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xwikidoc>
-  <web>Holiday Request</web>
+  <web>HolidayRequest</web>
   <name>SkinExtension</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <parent>Holiday Request.HolidayRequestSheet</parent>
+  <parent>HolidayRequest.WebHome</parent>
   <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1354027331000</creationDate>
-  <date>1354195873000</date>
-  <contentUpdateDate>1354195873000</contentUpdateDate>
+  <creationDate>1354791436000</creationDate>
+  <date>1354888518000</date>
+  <contentUpdateDate>1354791436000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <template/>
@@ -95,10 +95,10 @@
         <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
       </use>
     </class>
-    <name>Holiday Request.SkinExtension</name>
+    <name>HolidayRequest.SkinExtension</name>
     <number>0</number>
     <className>XWiki.StyleSheetExtension</className>
-    <guid>a6b050ee-2b31-4c5d-98de-578b54e19949</guid>
+    <guid>86d6a76d-cf34-43fd-ac7b-898f6cc5ba40</guid>
     <property>
       <cache>default</cache>
     </property>
@@ -114,7 +114,31 @@
     padding-top: 10px;
 }
 
-#actions .top{
+#newHR{
+    margin-bottom:10px;
+}
+
+#actionBox{
+    display: none ;
+}
+
+#summary td{
+    text-align: center ;
+    padding-left: 10px;
+    padding-right: 10px ;
+}
+
+#summary tr{
+    border: 1px solid black ;
+}
+
+#summary .head{
+    background-color:#F3F3F3 ;
+}
+
+#overview .button
+{
+   margin-bottom: 15px ;
 }</code>
     </property>
     <property>
