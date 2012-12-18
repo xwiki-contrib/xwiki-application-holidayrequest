@@ -22,7 +22,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content>contrib.hr.title=Application de demande de congés
 contrib.hr.app.title=Demande de congés
 
@@ -91,8 +91,9 @@ contrib.hr.WebHome.cancelled=Annulé
 contrib.hr.WebHome.status=Statut
 
 
-contrib.hr.notify.error.noManager=Vous devez définir un manager. Cliquez sur "Retour à l'édition" pour choisir votre manager. Aucun mail de notification n'a été envoyé.
-contrib.hr.notify.error.orderDate=Votre congé prend fin avant de comencer! Vérifiez les dates que vous avez rentré. Vous pouvez les modifier en cliquant sur "Retour à l'édition". Aucun mail de notification n'a été envoyé.
+contrib.hr.notify.error.noManager=Vous devez définir un manager. Aucun mail de notification n'a été envoyé.
+contrib.hr.notify.error.orderDate=Votre congé prend fin avant de comencer! Vérifiez les dates que vous avez rentré. Aucun mail de notification n'a été envoyé.
+contrib.hr.notify.error.nullDate=Assurez vous de préciser les dates de début et de fin de votre demande.
 
 contrib.hr.new.submit=Faire une nouvelle demande de congé
 

@@ -80,42 +80,13 @@
     <className>AppWithinMinutes.LiveTableClass</className>
     <guid>6f64ab61-20cd-42d6-9fae-f7c693bb2a0a</guid>
     <property>
-      <class>Holiday Request.HolidayRequestClass</class>
+      <class>HolidayRequest.HolidayRequestClass</class>
     </property>
     <property>
       <columns>employee startDate endDate manager status</columns>
     </property>
     <property>
       <description/>
-    </property>
-  </object>
-  <object>
-    <class>
-      <name>Holiday Request.Counter</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <count>
-        <disabled>0</disabled>
-        <name>count</name>
-        <number>1</number>
-        <numberType>long</numberType>
-        <prettyName>count</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
-      </count>
-    </class>
-    <name>HolidayRequest.WebHome</name>
-    <number>0</number>
-    <className>Holiday Request.Counter</className>
-    <guid>668d7d8f-3aaf-4a8e-bff3-f84b12f7f270</guid>
-    <property>
-      <count>1</count>
     </property>
   </object>
   <object>
@@ -194,7 +165,7 @@
       <extensionPointId>org.xwiki.platform.panels.Applications</extensionPointId>
     </property>
     <property>
-      <name>platform.panels.Holiday RequestApplication</name>
+      <name>platform.panels.HolidayRequestApplication</name>
     </property>
     <property>
       <parameters>label=$msg.get("contrib.hr.app.title")

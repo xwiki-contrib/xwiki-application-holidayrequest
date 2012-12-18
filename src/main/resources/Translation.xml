@@ -22,7 +22,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <object>
     <class>
       <name>XWiki.TranslationDocumentClass</name>
@@ -92,11 +92,11 @@ contrib.hr.newRequest.title=New Holiday Request
 contrib.hr.requestPage.title=Holiday Request
 
 contrib.hr.email.accept.success=This request has been accepted and an email has been sent to notify the employee of your decision.
-contrib.hr.email.accept.failure=This request has been accepted but we encountered an error while trying to send a notification email.
+contrib.hr.email.accept.failure=This request has been accepted but we encountered an error while trying to send a notification email to the employee.
 contrib.hr.email.refuse.success=This request has been refused and an email has been sent to notify the employee of your decision.
-contrib.hr.email.refuse.failure=This request has been refused but we encountered an error while trying to send a notification email.
+contrib.hr.email.refuse.failure=This request has been refused but we encountered an error while trying to send a notification email to the employee.
 contrib.hr.email.cancel.success=This request has been cancelled and an email has been sent to notify your manager of your decision.
-contrib.hr.email.cancel.failure=This request has been cancelled but we encountered an error while trying to send a notification email.
+contrib.hr.email.cancel.failure=This request has been cancelled but we encountered an error while trying to send a notification email to your manager.
 contrib.hr.email.notify.success=An notification email has been sent to your manager.
 contrib.hr.email.notify.failure=Your request has been saved, but unfortunately an error has been encountered while trying to send a notification to your manager.
 
@@ -130,8 +130,9 @@ contrib.hr.status.refused=Refused
 contrib.hr.status.pending=Pending
 contrib.hr.status.cancelled=Cancelled
 
-contrib.hr.notify.error.noManager=You should define a manager. Click on "Return to edit" to choose your manager. No notification mail has been send yet.
-contrib.hr.notify.error.orderDate=Your request ends before it starts! Please make sure you choose the right dates. You can modify them by clicking on "Return to edit". No notification mail has been send yet.
+contrib.hr.notify.error.noManager=You should define a manager. No notification mail has been send yet.
+contrib.hr.notify.error.orderDate=Your request ends before it starts! Please make sure you choose the right dates. No notification has been send yet.
+contrib.hr.notify.error.nullDate=Make sure to precise both the start and the end date of your request. No notification has been send yet.
 
 contrib.hr.new.submit=Make a new Holiday Request
 

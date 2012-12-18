@@ -12,8 +12,8 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1354791366000</creationDate>
-  <date>1354807523000</date>
-  <contentUpdateDate>1354807523000</contentUpdateDate>
+  <date>1355247416000</date>
+  <contentUpdateDate>1355247416000</contentUpdateDate>
   <version>1.1</version>
   <title>Holiday Request Class</title>
   <template/>
@@ -89,6 +89,20 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
     </manager>
+    <notification>
+      <customDisplay/>
+      <defaultValue>0</defaultValue>
+      <disabled>0</disabled>
+      <displayFormType>select</displayFormType>
+      <displayType/>
+      <name>notification</name>
+      <number>8</number>
+      <prettyName>notification</prettyName>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+    </notification>
     <numberDays>
       <customDisplay/>
       <disabled>0</disabled>
