@@ -11,12 +11,11 @@
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1354791479000</creationDate>
-  <date>1354888360000</date>
-  <contentUpdateDate>1354888360000</contentUpdateDate>
+  <creationDate>1382533183000</creationDate>
+  <date>1382528377000</date>
+  <contentUpdateDate>1382528201000</contentUpdateDate>
   <version>1.1</version>
   <title>$msg.get('contrib.hr.title')</title>
-  <template/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
@@ -80,7 +79,7 @@
     <className>AppWithinMinutes.LiveTableClass</className>
     <guid>6f64ab61-20cd-42d6-9fae-f7c693bb2a0a</guid>
     <property>
-      <class>HolidayRequest.HolidayRequestClass</class>
+      <class>Holiday Request.HolidayRequestClass</class>
     </property>
     <property>
       <columns>employee startDate endDate manager status</columns>
@@ -88,6 +87,12 @@
     <property>
       <description/>
     </property>
+  </object>
+  <object>
+    <name>HolidayRequest.WebHome</name>
+    <number>0</number>
+    <className>Holiday Request.Counter</className>
+    <guid>668d7d8f-3aaf-4a8e-bff3-f84b12f7f270</guid>
   </object>
   <object>
     <class>
@@ -165,7 +170,7 @@
       <extensionPointId>org.xwiki.platform.panels.Applications</extensionPointId>
     </property>
     <property>
-      <name>platform.panels.HolidayRequestApplication</name>
+      <name>platform.panels.Holiday RequestApplication</name>
     </property>
     <property>
       <parameters>label=$msg.get("contrib.hr.app.title")
@@ -181,9 +186,9 @@ icon=icon:weather_sun</parameters>
 {{velocity}}
 $xwiki.ssx.use("HolidayRequest.SkinExtension")
 
-#if ($request.createHR == 'true') 
+#if ($request.createHR == 'true')
   #set($count = $doc.getValue('count'))
-  #set($title="Request_$datetool.format('yyyy-M-d H:m:s',$datetool.getDate())")	
+  #set($title="Request_$datetool.format('yyyy-M-d H:m:s',$datetool.getDate())")
   #set($newHRReference = $services.model.createDocumentReference('', 'HolidayRequest', $title))
   $response.sendRedirect($xwiki.getURL($newHRReference, 'edit', "$!{request.queryString}&amp;title='New Holiday Request'"))
 #end
@@ -216,13 +221,13 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   'holidayrequest.livetable.status': $msg.get('contrib.hr.WebHome.status')
 }))
 #set($columnsProperties = {
-  'employee': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': false, 'link' : 'view'},
+  'employee': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true, 'link' : 'view'},
   'startDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': false},
   'endDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': false},
   'numberDays': {'type': 'number', 'size':10, 'filterable':true, 'sortable':true, 'html': false},
-  'manager': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': false},
+  'manager': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'status': {'type': 'list', 'size': 10, 'filterable': true, 'sortable': true, 'html': false, 'link' : 'view'},
-  'office': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': false}
+  'office': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true}
 })
 #set($options = {
   'className': 'HolidayRequest.HolidayRequestClass',
