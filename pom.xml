@@ -33,7 +33,7 @@
   <artifactId>xwiki-application-holidayrequest</artifactId>
   <packaging>xar</packaging>
   <name>Holiday Request</name>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <description>Provides XWiki users with a Holiday Request Application</description>
   <developers>
     <developer>
