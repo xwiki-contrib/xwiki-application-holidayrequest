@@ -36,7 +36,7 @@ contrib.hr.summary.daysLeft.explanation=Ce calcul est fait en considérant que c
 holidayrequest.livetable.employee=Employé
 holidayrequest.livetable.startDate=Date de début
 holidayrequest.livetable.endDate=Date de fin
-holidayrequest.livetable.numberDays=Nombre de jours
+holidayrequest.livetable.numberDays=Jours
 holidayrequest.livetable.manager=Manager
 holidayrequest.livetable.office=Bureau
 holidayrequest.livetable.status=Statut
@@ -46,7 +46,7 @@ contrib.hr.startDate=Date de début
 contrib.hr.endDate=Date de fin
 contrib.hr.manager=Manager
 contrib.hr.status=Statut
-contrib.hr.numberDays=Nombre de jours
+contrib.hr.numberDays=Jours
 contrib.hr.office=Bureau
 
 HolidayRequest.HolidayRequestClass_status_value1=Accepté

@@ -71,7 +71,7 @@ contrib.hr.summary.daysLeft.explanation=This is calculated considering that ever
 holidayrequest.livetable.employee=Employee
 holidayrequest.livetable.startDate=Start Date
 holidayrequest.livetable.endDate=End Date
-holidayrequest.livetable.numberDays=Number of Days
+holidayrequest.livetable.numberDays=Days
 holidayrequest.livetable.manager=Manager
 holidayrequest.livetable.office=Office
 holidayrequest.livetable.status=Status
@@ -81,7 +81,7 @@ contrib.hr.startDate=Start Date
 contrib.hr.endDate=End Date
 contrib.hr.manager=Manager
 contrib.hr.status=Status
-contrib.hr.numberDays=Number of days
+contrib.hr.numberDays=Days
 contrib.hr.office=Office
 
 HolidayRequest.HolidayRequestClass_status_value3=Pending
