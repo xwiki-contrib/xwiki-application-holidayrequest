@@ -180,7 +180,7 @@ icon=icon:weather_sun</parameters>
 {{velocity}}
 $xwiki.ssx.use("HolidayRequest.SkinExtension")
 
-## Load the User Picker style for the Employee & Manager columns
+## Load the User Picker style for the Employee and Manager columns
 #set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
 
 #if ($request.createHR == 'true') 
