@@ -22,7 +22,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content>{{velocity}}
 $xwiki.ssx.use("HolidayRequest.SkinExtension")
 $xcontext.put("status_accept", $msg.get('HolidayRequest.HolidayRequestClass_status_value1'))
