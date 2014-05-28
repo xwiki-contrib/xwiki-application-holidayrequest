@@ -42,7 +42,18 @@
     <developer>
       <name>Andreea Popescu</name>
     </developer>
+	<developer>
+      <name>Yann Flory</name>
+    </developer>
   </developers>
+  <dependencies>
+    <dependency>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>macro-fullcalendar</artifactId>
+      <version>1.1.8</version>
+	  <type>xar</type>
+    </dependency>
+  </dependencies>
   <scm>
    <connection>scm:git:git://github.com/xwiki-contrib/xwiki-application-holidayrequest.git</connection>
    <developerConnection>scm:git:git@github.com:xwiki-contrib/xwiki-application-holidayrequest.git</developerConnection>

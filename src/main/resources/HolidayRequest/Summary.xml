@@ -11,12 +11,11 @@
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1354792751000</creationDate>
-  <date>1354892609000</date>
-  <contentUpdateDate>1354892500000</contentUpdateDate>
+  <creationDate>1401184625000</creationDate>
+  <date>1401285645000</date>
+  <contentUpdateDate>1401285645000</contentUpdateDate>
   <version>1.1</version>
   <title>$msg.get('contrib.hr.summary.title')</title>
-  <template/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
@@ -46,7 +45,7 @@ Request.eachWithIndex()
   if(obj!=null &amp;&amp; obj.get('status')==accept)
   {
     numberDays = obj.get('numberDays')
-    numberDays = Integer.parseInt(numberDays)
+    numberDays = Float.parseFloat(numberDays)
     employee = obj.get('employee')
     if(mapUsersDays.containsKey(employee))
     {
@@ -55,9 +54,12 @@ Request.eachWithIndex()
     else
     {
       mapUsersDays[employee] = numberDays
-      if(xwiki.getUserName(document.getValue('employee'), '$startDate', false)!='$startDate')  //If we have a date specified
+      if(xwiki.getDocument(document.getValue('employee')).getObject("XWiki.XWikiUsers")) //If the employee still exists
       {
-         mapUsersStart[employee] = xwiki.getUserName(document.getValue('employee'), '$startDate', false)
+        if(xwiki.getUserName(document.getValue('employee'), '$startDate', false)!='$startDate')  //If we have a date specified
+        {
+           mapUsersStart[employee] = xwiki.getUserName(document.getValue('employee'), '$startDate', false)
+        }
       }
       n=n+1
     }
