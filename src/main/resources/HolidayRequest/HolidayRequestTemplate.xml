@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
 <xwikidoc>
   <web>HolidayRequest</web>
   <name>HolidayRequestTemplate</name>
@@ -11,12 +31,11 @@
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1354791419000</creationDate>
-  <date>1355248991000</date>
-  <contentUpdateDate>1355248991000</contentUpdateDate>
+  <creationDate>1401184624000</creationDate>
+  <date>1400493884000</date>
+  <contentUpdateDate>1400493884000</contentUpdateDate>
   <version>1.1</version>
   <title>HolidayRequest Template</title>
-  <template/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
@@ -33,6 +52,21 @@
       <defaultWeb/>
       <nameField/>
       <validationScript/>
+      <comment>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>comment</name>
+        <number>9</number>
+        <picker>0</picker>
+        <prettyName>Comment</prettyName>
+        <rows>7</rows>
+        <size>60</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </comment>
       <employee>
         <cache>0</cache>
         <customDisplay/>
@@ -109,9 +143,9 @@
         <disabled>0</disabled>
         <name>numberDays</name>
         <number>6</number>
-        <numberType>long</numberType>
+        <numberType>float</numberType>
         <prettyName>numberDays</prettyName>
-        <size>30</size>
+        <size>5</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
@@ -168,6 +202,27 @@
         <values>value1=Accepted|value2=Cancelled|value3=Pending|value4=Refused</values>
         <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
       </status>
+      <type>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>type</name>
+        <number>10</number>
+        <picker>0</picker>
+        <prettyName>Type of holidays</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>normal=Normal paid holidays|unpayed=Unpaid holidays|medical=Medical holidays|other=Other</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </type>
     </class>
     <name>HolidayRequest.HolidayRequestTemplate</name>
     <number>0</number>
@@ -186,7 +241,7 @@
       <notification>1</notification>
     </property>
     <property>
-      <numberDays>1</numberDays>
+      <numberDays>1.0</numberDays>
     </property>
     <property>
       <office/>

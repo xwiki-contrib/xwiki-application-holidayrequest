@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
 <xwikidoc>
   <web>HolidayRequest</web>
   <name>Translation</name>
@@ -11,9 +31,9 @@
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1385993677000</creationDate>
-  <date>1386245809000</date>
-  <contentUpdateDate>1386245809000</contentUpdateDate>
+  <creationDate>1401184625000</creationDate>
+  <date>1401273126000</date>
+  <contentUpdateDate>1401273126000</contentUpdateDate>
   <version>1.1</version>
   <title>Translation</title>
   <defaultTemplate/>
@@ -60,6 +80,8 @@
   <content>contrib.hr.title=Holiday Request Application
 contrib.hr.app.title=Holiday Request
 
+contrib.hr.calendar=Calendar
+
 contrib.hr.summary=Overview
 contrib.hr.summary.title=Overview
 contrib.hr.summary.table.employee=Employee
@@ -72,9 +94,11 @@ holidayrequest.livetable.employee=Employee
 holidayrequest.livetable.startDate=Start Date
 holidayrequest.livetable.endDate=End Date
 holidayrequest.livetable.numberDays=Days
+holidayrequest.livetable.type=Type of holidays
 holidayrequest.livetable.manager=Manager
 holidayrequest.livetable.office=Office
 holidayrequest.livetable.status=Status
+holidayrequest.livetable.comment=Comment
 
 contrib.hr.employee=Employee
 contrib.hr.startDate=Start Date
@@ -82,12 +106,19 @@ contrib.hr.endDate=End Date
 contrib.hr.manager=Manager
 contrib.hr.status=Status
 contrib.hr.numberDays=Days
+contrib.hr.type=Type of holidays
 contrib.hr.office=Office
+contrib.hr.comment=Comment (mandatory if refused)
 
 HolidayRequest.HolidayRequestClass_status_value3=Pending
 HolidayRequest.HolidayRequestClass_status_value4=Refused
 HolidayRequest.HolidayRequestClass_status_value1=Accepted
 HolidayRequest.HolidayRequestClass_status_value2=Cancelled
+
+HolidayRequest.HolidayRequestClass_type_normal=Normal paid holidays
+HolidayRequest.HolidayRequestClass_type_unpayed=Unpaid holidays
+HolidayRequest.HolidayRequestClass_type_medical=Medical holidays
+HolidayRequest.HolidayRequestClass_type_other=Other
 
 contrib.hr.accept.submit=Accept this request
 contrib.hr.refuse.submit=Refuse this request
@@ -104,13 +135,13 @@ contrib.hr.email.refuse.success=This request has been refused and an email has b
 contrib.hr.email.refuse.failure=This request has been refused but we encountered an error while trying to send a notification email to the employee.
 contrib.hr.email.cancel.success=This request has been cancelled and an email has been sent to notify your manager of your decision.
 contrib.hr.email.cancel.failure=This request has been cancelled but we encountered an error while trying to send a notification email to your manager.
-contrib.hr.email.notify.success=An notification email has been sent to your manager.
+contrib.hr.email.notify.success=A notification email has been sent to your manager.
 contrib.hr.email.notify.failure=Your request has been saved, but unfortunately an error has been encountered while trying to send a notification to your manager.
 
 contrib.hr.email.accept.title=Your holiday request from {0} to {1}
 contrib.hr.email.accept.text=Your holiday request from {0} to {1} has been accepted.
 contrib.hr.email.refuse.title=Your holiday request from {0} to {1}
-contrib.hr.email.refuse.text=Your holiday request from {0} to {1} has been refused.
+contrib.hr.email.refuse.text=Your holiday request from {0} to {1} has been refused. Comment:
 contrib.hr.email.notify.title={0} made a holiday request from {1} to {2}
 contrib.hr.email.notify.text={0} made a holiday request from {1} to {2} and set you as his manager. You can view and accept or refuse this request by clicking on the link below.
 contrib.hr.email.cancel.title={0} cancelled his holiday request from {1} to {2}.
@@ -140,11 +171,12 @@ contrib.hr.status.cancelled=Cancelled
 contrib.hr.notify.error.noManager=You should define a manager. No notification mail has been send yet.
 contrib.hr.notify.error.orderDate=Your request ends before it starts! Please make sure you choose the right dates. No notification has been send yet.
 contrib.hr.notify.error.nullDate=Make sure to precise both the start and the end date of your request. No notification has been send yet.
+contrib.hr.notify.error.refuse.noComment=You must justify why you have refused that request.
 
 contrib.hr.new.submit=Make a new Holiday Request
 
 contrib.hr.guest=To make a holiday request you need first to login or register. 
 
 contrib.hr.export.pdf=Export into PDF file
-contrib.hr.pdf.request=I, {0}, have made a holiday request from {1} to {2} </content>
+contrib.hr.pdf.request=I, {0}, have made a holiday request from {1} to {2}</content>
 </xwikidoc>
