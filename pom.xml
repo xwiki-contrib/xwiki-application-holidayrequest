@@ -72,7 +72,7 @@
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>macro-fullcalendar</artifactId>
       <version>1.1.8</version>
-	  <type>xar</type>
+      <type>xar</type>
     </dependency>
   </dependencies>
   <build>
