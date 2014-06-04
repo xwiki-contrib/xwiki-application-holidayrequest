@@ -65,7 +65,14 @@ Request.eachWithIndex()
   if(obj!=null &amp;&amp; obj.get('status')==accept)
   {
     numberDays = obj.get('numberDays')
-    numberDays = Float.parseFloat(numberDays)
+    if(numberDays != null &amp;&amp; numberDays.size() &gt; 0)
+    {
+       numberDays = Float.parseFloat(numberDays)
+    }
+    else
+    {
+       numberDays = 0
+    }
     employee = obj.get('employee')
     if(mapUsersDays.containsKey(employee))
     {
