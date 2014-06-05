@@ -138,15 +138,6 @@ contrib.hr.email.cancel.failure=This request has been cancelled but we encounter
 contrib.hr.email.notify.success=A notification email has been sent to your manager.
 contrib.hr.email.notify.failure=Your request has been saved, but unfortunately an error has been encountered while trying to send a notification to your manager.
 
-contrib.hr.email.accept.title=Your holiday request from {0} to {1}
-contrib.hr.email.accept.text=Your holiday request from {0} to {1} has been accepted.
-contrib.hr.email.refuse.title=Your holiday request from {0} to {1}
-contrib.hr.email.refuse.text=Your holiday request from {0} to {1} has been refused. Comment:
-contrib.hr.email.notify.title={0} made a holiday request from {1} to {2}
-contrib.hr.email.notify.text={0} made a holiday request from {1} to {2} and set you as his manager. You can view and accept or refuse this request by clicking on the link below.
-contrib.hr.email.cancel.title={0} cancelled his holiday request from {1} to {2}.
-contrib.hr.email.cancel.text={0} cancelled his holiday request from {1} to {2}.
-
 contrib.hr.request={0} has made a Holiday Request from {1} to {2}
 
 contrib.hr.sheet.message=This class sheet must be applied on a document containing an "Holiday Request.HolidayRequestClass" object.

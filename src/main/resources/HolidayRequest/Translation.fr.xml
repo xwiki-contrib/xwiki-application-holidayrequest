@@ -103,15 +103,6 @@ contrib.hr.email.cancel.failure=Cette demande a été annulée, mais l'envoi d'u
 contrib.hr.email.notify.success=Un courriel a été envoyé à votre manager pour lui faire part de votre demande.
 contrib.hr.email.notify.failure=Votre demande a été enregistrée mais l'envoi d'un courriel à votre manager a échoué.
 
-contrib.hr.email.accept.title=Votre demande de congé du {0} au {1}
-contrib.hr.email.accept.text=Votre demande de congé du {0} au {1} a été acceptée.
-contrib.hr.email.refuse.title=Votre demande de congé du {0} au {1}
-contrib.hr.email.refuse.text=Votre demande de congé du {0} au {1} a été refusée. Justification du refus : 
-contrib.hr.email.notify.title={0} a fait une demande de congé du {1} au {2}
-contrib.hr.email.notify.text={0} a fait une demande de congé du {1} au {2} et vous a défini comme étant son manager. Vous pouvez consulter et accepter ou refuser cette demande en cliquant sur le lien ci-dessous.
-contrib.hr.email.cancel.title={0} a annulé sa demande de congé du {1} au {2}.
-contrib.hr.email.cancel.text={0} a annulé sa demande de congé {1} au {2}. 
-
 contrib.hr.request={0} a fait une demande de congé du {1} au {2}
 
 contrib.hr.sheet.message=Cette feuille de classe doit être appliquée à un document contenant un objet de type "Holiday Request.HolidayRequestClass".
