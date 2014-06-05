@@ -382,6 +382,16 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
 #set($link = $doc.getExternalURL())
 #set($token = $services.csrf.getToken())
 #set($comment = $!request.comment.trim())
+#set($confDoc = $!xwiki.getDocument('HolidayRequest.Configuration'))
+#set($prefix = $!confDoc.getValue('prefix'))
+#set($ccMail = $!confDoc.getValue('cc'))
+#set($mailLanguage = $!confDoc.getValue('language'))
+#set($startDateMail = $datetool.format('full_date',$!doc.getValue("startDate"),$mailLanguage))
+#set($endDateMail = $datetool.format('full_date',$!doc.getValue("endDate"),$mailLanguage))
+
+#if($ccMail.trim() == "")
+  #set($ccMail = $xwiki.null)
+#end
 
 #if($request.newDoc=='true')
   #set($newDoc=true)
@@ -390,8 +400,12 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
 #end
 #if($request.createHR=='true')
   $doc.set('employee', $context.user)  ##It's the current user who is making a Holiday Request
-  #set($managerUser = $xwiki.getDocument("$context.user").getObject("XWiki.XWikiUsers").getProperty("manager").value)
-  $doc.set('manager', "$!managerUser")
+  #set($managerProfile = $!xwiki.getUserName($context.user, '$manager', false)) ##From XWiki or from LDAP: sn=...,ou=users,dc=xwiki,dc=com
+  #if($managerProfile.contains("="))
+    $doc.set('manager', "xwiki:XWiki.${managerProfile.split(',')[0].split('=')[1]}")
+  #elseif($managerProfile)
+    $doc.set('manager', "$!managerProfile")  
+  #end
   $doc.set('notification', 0)
   #set($office = $!xwiki.getUserName($context.user, '$office', false))
   #if($office!='$office')
@@ -417,12 +431,13 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
       $doc.set('notification', 1)
       $doc.save()
       #if($employeeShortName != "")
-        #set($title = $msg.get('contrib.hr.email.notify.title', [$employeeShortName,$startDate,$endDate]))
+        #set($title = $msg.get("contrib.hr.email.notify.title.$mailLanguage", [$employeeShortName,$startDateMail,$endDateMail]))
       #else
-        #set($title = $msg.get('contrib.hr.email.notify.title', [$employee,$startDate,$endDate]))
+        #set($title = $msg.get("contrib.hr.email.notify.title.$mailLanguage", [$employee,$startDateMail,$endDateMail]))
       #end
-      #set($message = $msg.get('contrib.hr.email.notify.text', [$employeeShortName,$startDate,$endDate]))
-      #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)  ##Send a copy to employee?
+      #set($title = "$prefix $title")
+      #set($message = $msg.get("contrib.hr.email.notify.text.$mailLanguage", [$employeeShortName,$startDateMail,$endDateMail]))
+      #if($xwiki.mailsender.sendHtmlMessage($employeeMail, $managerMail, $ccMail, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)  ##Send a copy to employee?
         $msg.get('contrib.hr.email.notify.success')
       #else
         {{warning}}$msg.get('contrib.hr.email.notify.failure'){{/warning}}
@@ -438,9 +453,10 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   $doc.set('comment', $!comment)
   $doc.set('status', 'value1')
   $doc.save()
-  #set($title = $msg.get('contrib.hr.email.accept.title', [$startDate,$endDate]))
-  #set($message = $msg.get('contrib.hr.email.accept.text', [$startDate,$endDate]))
-  #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)
+  #set($title = $msg.get("contrib.hr.email.accept.title.$mailLanguage", [$startDateMail,$endDateMail]))
+  #set($title = "$prefix $title")
+  #set($message = $msg.get("contrib.hr.email.accept.text.$mailLanguage", [$startDateMail,$endDateMail]))
+  #if($xwiki.mailsender.sendHtmlMessage($managerMail, $employeeMail, $ccMail, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)
     $msg.get('contrib.hr.email.accept.success')
   #else
     {{warning}}$msg.get('contrib.hr.email.accept.failure'){{/warning}}
@@ -451,9 +467,10 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
     $doc.set('comment', $!comment)
 	$doc.set('status', 'value4')
     $doc.save()
-    #set($title = $msg.get('contrib.hr.email.refuse.title', [$startDate,$endDate]))
-    #set($message = $msg.get('contrib.hr.email.refuse.text', [$startDate,$endDate]))
-    #if($xwiki.mailsender.sendHtmlMessage("$context.user", $employeeMail, $xwiki.null, $xwiki.null, $title, "$message &lt;br&gt;&lt;em&gt;$comment&lt;/em&gt; &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$comment${util.getNewline()}$link", "")==0)
+    #set($title = $msg.get("contrib.hr.email.refuse.title.$mailLanguage", [$startDateMail,$endDateMail]))
+    #set($title = "$prefix $title")
+    #set($message = $msg.get("contrib.hr.email.refuse.text.$mailLanguage", [$startDateMail,$endDateMail]))
+    #if($xwiki.mailsender.sendHtmlMessage($managerMail, $employeeMail, $ccMail, $xwiki.null, $title, "$message &lt;br&gt;&lt;em&gt;$comment&lt;/em&gt; &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$comment${util.getNewline()}$link", "")==0)
       $msg.get('contrib.hr.email.refuse.success')
 	#else
       {{warning}}$msg.get('contrib.hr.email.refuse.failure'){{/warning}}
@@ -466,12 +483,13 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   $doc.set('status', 'value2')
   $doc.save()
   #if($employeeShortName != "")
-    #set($title = $msg.get('contrib.hr.email.cancel.title', [$employeeShortName,$startDate,$endDate]))
+    #set($title = $msg.get("contrib.hr.email.cancel.title.$mailLanguage", [$employeeShortName,$startDateMail,$endDateMail]))
   #else
-    #set($title = $msg.get('contrib.hr.email.cancel.title', [$employee,$startDate,$endDate]))
+    #set($title = $msg.get("contrib.hr.email.cancel.title.$mailLanguage", [$employee,$startDateMail,$endDateMail]))
   #end
-  #set($message = $msg.get('contrib.hr.email.cancel.text', [$employeeShortName,$startDate,$endDate]))
-  #if($xwiki.mailsender.sendHtmlMessage("$context.user", $managerMail, $xwiki.null, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)  ##Send a copy to employee?
+  #set($title = "$prefix $title")
+  #set($message = $msg.get("contrib.hr.email.cancel.text.$mailLanguage", [$employeeShortName,$startDateMail,$endDateMail]))
+  #if($xwiki.mailsender.sendHtmlMessage($employeeMail, $managerMail, $ccMail, $xwiki.null, $title, "$message &lt;br&gt;&lt;br&gt;&lt;a href=$link&gt;$link&lt;/a&gt;", "$message${util.getNewline()}$link", "")==0)  ##Send a copy to employee?
     $msg.get('contrib.hr.email.cancel.success')
   #else
     {{warning}}$msg.get('contrib.hr.email.cancel.failure'){{/warning}}
