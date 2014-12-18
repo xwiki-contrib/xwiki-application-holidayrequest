@@ -24,7 +24,7 @@
   <web>HolidayRequest</web>
   <name>Translation</name>
   <language/>
-  <defaultLanguage/>
+  <defaultLanguage>en</defaultLanguage>
   <translation>0</translation>
   <parent>HolidayRequest.HolidayRequestSheet</parent>
   <creator>xwiki:XWiki.Admin</creator>
