@@ -400,7 +400,7 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
 #end
 #if($request.createHR=='true')
   $doc.set('employee', $context.user)  ##It's the current user who is making a Holiday Request
-  #set($managerProfile = $!xwiki.getUserName($context.user, '$manager', false)) ##From XWiki or from LDAP: sn=...,ou=users,dc=xwiki,dc=com
+  #set($managerProfile = $!xwiki.getUserName($context.user, "$manager", false)) ##From XWiki or from LDAP: sn=...,ou=users,dc=xwiki,dc=com
   #if($managerProfile.contains("="))
     $doc.set('manager', "xwiki:XWiki.${managerProfile.split(',')[0].split('=')[1]}")
   #elseif($managerProfile)
