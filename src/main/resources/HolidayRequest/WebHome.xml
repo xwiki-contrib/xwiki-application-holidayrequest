@@ -80,12 +80,13 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
 }))
 
 #set($columnsProperties = {
+  '_action': {'type': 'none', 'link' : 'view'},
   'employee': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true, 'link' : 'view'},
   'startDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'endDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'numberDays': {'type': 'number', 'size':10, 'filterable':true, 'sortable':true, 'html': true},
   'manager': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
-  'status': {'type': 'list', 'size': 10, 'filterable': true, 'sortable': true, 'html': true, 'link' : 'view'},
+  'status': {'type': 'list', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'office': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'comment': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true}
 })
@@ -99,7 +100,7 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   'selectedColumn': 'startDate',
   'defaultOrder': 'desc'
 })
-#set($columns = ['employee', 'startDate', 'endDate', 'numberDays', 'manager', 'office', 'comment', 'status'])
+#set($columns = ['_action', 'employee', 'startDate', 'endDate', 'numberDays', 'manager', 'office', 'comment', 'status'])
 #livetable('holidayrequest' $columns $columnsProperties $options)
 #set($msg = $originalMsg)
 
