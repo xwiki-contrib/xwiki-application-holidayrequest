@@ -92,6 +92,13 @@ Request.eachWithIndex()
     }
   }
 };
+if(n==0)
+{
+  def no_requests = services.localization.render('contrib.hr.summary.no.accepted.requests')
+  println "(% class ='noitems' %)"
+  println no_requests
+}
+
 def employees = [n]
 def days = [n]
 def start = [n]

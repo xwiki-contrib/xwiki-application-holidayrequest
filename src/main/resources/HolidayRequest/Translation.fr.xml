@@ -54,6 +54,7 @@ contrib.hr.summary.table.days=Jours pris
 contrib.hr.summary.table.daysLeft=Jours restant
 contrib.hr.summary.daysTaken.explanation=Somme des jours de congés acceptés.
 contrib.hr.summary.daysLeft.explanation=Ce calcul est fait en considérant que chaque employé à le droit à 25 jours de vacances dans l'année, et les obtient de manière continue.
+contrib.hr.summary.no.accepted.requests=Il n'y a pas de demandes acceptées
 
 holidayrequest.livetable._action=Action
 holidayrequest.livetable.actiontext=Voir

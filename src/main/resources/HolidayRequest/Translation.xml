@@ -89,6 +89,7 @@ contrib.hr.summary.table.days=Days taken
 contrib.hr.summary.table.daysLeft=Days left
 contrib.hr.summary.daysTaken.explanation=Sum of the days of all the accepted holiday requests.
 contrib.hr.summary.daysLeft.explanation=This is calculated considering that every employee benefits from 25 holidays a year and acquire them continually over the year.
+contrib.hr.summary.no.accepted.requests=There are no accepted requests
 
 holidayrequest.livetable._action=Action
 holidayrequest.livetable.actiontext=View
