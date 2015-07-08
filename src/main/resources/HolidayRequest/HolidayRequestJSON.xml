@@ -52,7 +52,7 @@
 #set($end = $end * 1000)
 #set($end = $xwiki.jodatime.getDateTime($end))
 #set($end = $xwiki.formatDate($end.toDate(), "YYYY-MM-dd HH:mm:ss"))
-    #set($sql = ", BaseObject as obj, StringProperty as status, DateProperty startDate, DateProperty endDate where doc.fullName=obj.name and obj.className='HolidayRequest.HolidayRequestClass' and obj.id=status.id.id and status.id.name='status' and status.value ='value1' and obj.id=startDate.id.id and startDate.id.name='startDate' and obj.id=endDate.id.id and endDate.id.name='endDate' and ((startDate.value &gt;= '${start}' and startDate.value &lt;= '${end}') or (endDate.value &gt;= '${start}' and endDate.value &lt;= '${end}') or (startDate.value &lt;= '${start}' and endDate.value &gt;= '${end}') )")
+#set($sql = ", BaseObject as obj, StringProperty as status, DateProperty startDate, DateProperty endDate where doc.fullName=obj.name and obj.className='HolidayRequest.HolidayRequestClass' and obj.id=status.id.id and status.id.name='status' and status.value ='value1' and obj.id=startDate.id.id and startDate.id.name='startDate' and obj.id=endDate.id.id and endDate.id.name='endDate' and ((startDate.value &gt;= '${start}' and startDate.value &lt;= '${end}') or (endDate.value &gt;= '${start}' and endDate.value &lt;= '${end}') or (startDate.value &lt;= '${start}' and endDate.value &gt;= '${end}') )")
 #foreach($item in $xwiki.searchDocuments($sql))
 #set($itemdoc = $xwiki.getDocument($item))
 #set($startdate = $itemdoc.getValue("startDate"))
