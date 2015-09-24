@@ -102,6 +102,7 @@ holidayrequest.livetable.manager=Manager
 holidayrequest.livetable.office=Office
 holidayrequest.livetable.status=Status
 holidayrequest.livetable.comment=Comment
+holidayrequest.livetable._actions=Actions
 
 contrib.hr.employee=Employee
 contrib.hr.startDate=Start Date

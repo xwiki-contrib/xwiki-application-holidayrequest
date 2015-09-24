@@ -88,7 +88,8 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   'manager': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'status': {'type': 'list', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'office': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
-  'comment': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true}
+  'comment': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
+  '_actions': {'sortable': false, 'filterable': false, 'html': true, 'actions': ['edit', 'delete']}
 })
 #set($options = {
   'className': 'HolidayRequest.HolidayRequestClass',
@@ -100,7 +101,7 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   'selectedColumn': 'startDate',
   'defaultOrder': 'desc'
 })
-#set($columns = ['_action', 'employee', 'startDate', 'endDate', 'numberDays', 'manager', 'office', 'comment', 'status'])
+#set($columns = ['_action', 'employee', 'startDate', 'endDate', 'numberDays', 'manager', 'office', 'comment', 'status', '_actions'])
 #livetable('holidayrequest' $columns $columnsProperties $options)
 #set($msg = $originalMsg)
 
