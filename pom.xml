@@ -66,7 +66,6 @@
   <properties>
     <!-- Don't run CLIRR here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
-    <xwiki.extension.features>tdelafosse:file-manager-application</xwiki.extension.features>
   </properties>
   <dependencies>
     <dependency>
