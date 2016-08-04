@@ -49,7 +49,7 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
   #set($count = $doc.getValue('count'))
   #set($title="Request_$datetool.format('yyyy-M-d H:m:s',$datetool.getDate())")
   #set($newHRReference = $services.model.createDocumentReference('', 'HolidayRequest', $title))
-  $response.sendRedirect($xwiki.getURL($newHRReference, 'edit', "$!{request.queryString}&amp;title='New Holiday Request'"))
+  $response.sendRedirect($xwiki.getURL($newHRReference, 'edit', "$!{request.queryString}&amp;title=$title"))
 #end
 #if($isGuest)
   $msg.get('contrib.hr.guest')

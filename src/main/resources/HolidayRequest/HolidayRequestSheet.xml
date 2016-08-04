@@ -35,7 +35,7 @@
   <date>1401285679000</date>
   <contentUpdateDate>1401285679000</contentUpdateDate>
   <version>1.1</version>
-  <title>$msg.get('contrib.hr.requestPage.title')</title>
+  <title/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
