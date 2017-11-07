@@ -81,7 +81,7 @@ $xwiki.ssx.use("HolidayRequest.SkinExtension")
 
 #set($columnsProperties = {
   '_action': {'type': 'none', 'link' : 'view', 'sortable': false},
-  'employee': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true, 'link' : 'view'},
+  'employee': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'startDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'endDate': {'type': 'text', 'size': 10, 'filterable': true, 'sortable': true, 'html': true},
   'numberDays': {'type': 'number', 'size':10, 'filterable':true, 'sortable':true, 'html': true},
